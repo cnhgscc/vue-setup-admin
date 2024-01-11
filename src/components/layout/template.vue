@@ -6,11 +6,17 @@
         <el-menu
           :mode="vm.width <= 768 ? 'horizontal':'vertical'"
           :collapse="vm.collapse"
+          collapse-transition
         >
           <!-- slogn -->
-          <el-menu-item index="/" class="slogn">vue-setup-admin</el-menu-item>
+          <el-menu-item index="/" class="slogn">
+            vue-setup-admin
+          </el-menu-item>
           
-          <el-menu-item index="1">Processing Center</el-menu-item>
+          <el-menu-item index="1">
+            <el-icon><setting /></el-icon>
+            <template #title>Navigator Four</template>
+          </el-menu-item>
           <el-sub-menu index="2">
             <template #title>Workspace</template>
             <el-menu-item index="2-1">item one</el-menu-item>
@@ -42,7 +48,7 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, reactive } from 'vue';
-import { Fold, Expand } from '@element-plus/icons-vue'
+import { Fold, Expand, Loading, Setting } from '@element-plus/icons-vue'
 
 const vm = reactive({
   width: 0,

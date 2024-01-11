@@ -23,6 +23,15 @@
       </el-scrollbar>
     </div>
     <div class="footer">
+
+      <div class="description" v-if="!vm.collapse">
+        <div class="left">
+          <div class="loginuser">{{ vmsept.loginuser }}</div>
+          <div class="timezone">{{ vmsept.timezone }}</div>
+        </div>
+        <div class="right"><el-icon><User /></el-icon></div>
+      </div>
+
       <div class="collapse">
         <el-icon @click="vm.collapse=false" v-if="vm.collapse"><Expand /></el-icon>
         <el-icon @click="vm.collapse=true" v-else><Fold /></el-icon>
@@ -36,7 +45,7 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, reactive } from 'vue';
-import { Fold, Expand, ChatRound, Setting } from '@element-plus/icons-vue'
+import { Fold, Expand, ChatRound, Setting, User } from '@element-plus/icons-vue'
 import {useVmseptStore} from '@/stores/vmsept'
 
 const vmsept = useVmseptStore()
@@ -63,14 +72,45 @@ onBeforeMount(()=>{
   width: 100vw;
 
   .navbar{ // el-aside || el-header
-    .slogn{
-      font-size: 1.2rem;
-      color: var(--el-color-primary);
-      font-weight: 600;
-      font-style:italic;
+    .el-menu{
+      border-right: none;
+      .slogn{
+        font-size: 1.2rem;
+        color: var(--el-color-primary);
+        font-weight: 600;
+        font-style:italic;
+      }
     }
 
+
     .footer{
+      width: 100%;
+      text-align: center;
+      
+      .description{
+        display: flex;
+        justify-items: center;
+        padding: 0.3rem 1rem;
+        border-top: 1px solid var(--gb-border-primary);
+        border-bottom: 1px solid var(--gb-border-primary);
+
+        .loginuser{
+          font-size: 0.9rem;
+          text-align: left;
+        }
+        .timezone{
+          font-size: 0.5rem;
+          text-align: left;
+        }
+
+        .right{
+          padding-top: 0.3rem;
+          margin-left: auto;
+          line-height: 1.4rem;
+          justify-items: center;
+        }
+      }
+
       .collapse{
         color: var(--el-color-primary);
       }
@@ -81,10 +121,6 @@ onBeforeMount(()=>{
     padding: 0;
     margin: 0;
   }
-}
-
-.el-menu{
-  border-right: none;
 }
 
 
@@ -123,14 +159,10 @@ onBeforeMount(()=>{
     height: 100%;
     justify-content: space-between;
     width: auto;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid var(--gb-border-primary);
 
     .header{
       margin-right: autos;
-    }
-    .footer{
-      width: 100%;
-      text-align: center;
     }
     
   }

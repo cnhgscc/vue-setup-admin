@@ -1,3 +1,7 @@
+:root{
+  --gb-border-primary: #ddd
+}
+
 html,body{
   margin: 0;
   padding: 0;

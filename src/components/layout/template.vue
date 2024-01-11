@@ -30,7 +30,7 @@
     </div>
   </component>
   <el-main>
-    13123
+    <slot name="main"></slot>
   </el-main>
 </el-container>
 </template>
@@ -62,13 +62,24 @@ onBeforeMount(()=>{
   height: 100vh;
   width: 100vw;
 
-  .navbar{
+  .navbar{ // el-aside || el-header
     .slogn{
       font-size: 1.2rem;
       color: var(--el-color-primary);
       font-weight: 600;
       font-style:italic;
     }
+
+    .footer{
+      .collapse{
+        color: var(--el-color-primary);
+      }
+    }
+  }
+  
+  .el-main{
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -76,11 +87,7 @@ onBeforeMount(()=>{
   border-right: none;
 }
 
-.footer{
-  .collapse{
-    color: var(--el-color-primary);
-  }
-}
+
 
 
 @media (max-width: 768px) {

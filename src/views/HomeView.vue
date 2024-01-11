@@ -1,7 +1,9 @@
 <template>
 <main>
   <LayoutView>
-    
+    <template #main>
+      main
+    </template>
   </LayoutView>
 </main>
 </template>

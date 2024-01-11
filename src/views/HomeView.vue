@@ -1,14 +1,14 @@
 <template>
 <main>
-  <Layout>
+  <LayoutView>
     
-  </Layout>
+  </LayoutView>
 </main>
 </template>
 
 <script setup lang="ts">
 import {reactive} from 'vue'
-import Layout from '@/components/layout/template.vue'
+import LayoutView from '@/components/layout/template.vue'
 
 
 const vmps = reactive({

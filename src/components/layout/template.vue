@@ -7,35 +7,23 @@
           :mode="vm.width <= 768 ? 'horizontal':'vertical'"
           :collapse="vm.collapse"
           collapse-transition
+          router
         >
           <!-- slogn -->
           <el-menu-item index="/" class="slogn">
-            vue-setup-admin
+            <el-icon><ChatRound /></el-icon>
+            <template #title>vue-setup-admin</template>
           </el-menu-item>
           
           <el-menu-item index="1">
             <el-icon><setting /></el-icon>
             <template #title>Navigator Four</template>
           </el-menu-item>
-          <el-sub-menu index="2">
-            <template #title>Workspace</template>
-            <el-menu-item index="2-1">item one</el-menu-item>
-            <el-menu-item index="2-2">item two</el-menu-item>
-            <el-menu-item index="2-3">item three</el-menu-item>
-            <el-sub-menu index="2-4">
-              <template #title>item four</template>
-              <el-menu-item index="2-4-1">item one</el-menu-item>
-              <el-menu-item index="2-4-2">item two</el-menu-item>
-              <el-menu-item index="2-4-3">item three</el-menu-item>
-            </el-sub-menu>
-          </el-sub-menu>
-          <el-menu-item index="3" disabled>Info</el-menu-item>
-          <el-menu-item index="4">Orders</el-menu-item>
         </el-menu>
       </el-scrollbar>
     </div>
     <div class="footer">
-      <div>
+      <div class="collapse">
         <el-icon @click="vm.collapse=false" v-if="vm.collapse"><Expand /></el-icon>
         <el-icon @click="vm.collapse=true" v-else><Fold /></el-icon>
       </div>
@@ -48,7 +36,7 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, reactive } from 'vue';
-import { Fold, Expand, Loading, Setting } from '@element-plus/icons-vue'
+import { Fold, Expand, ChatRound, Setting } from '@element-plus/icons-vue'
 
 const vm = reactive({
   width: 0,
@@ -72,11 +60,10 @@ onBeforeMount(()=>{
 
   .navbar{
     .slogn{
-      padding: 0.5rem 0.3rem;
       font-size: 1.2rem;
-      width: 11rem;
+      // width: 11rem;
       color: var(--el-color-primary);
-      font-weight: 700;
+      font-weight: 600;
       font-style:italic;
     }
   }
@@ -84,6 +71,12 @@ onBeforeMount(()=>{
 
 .el-menu{
   border-right: none;
+}
+
+.footer{
+  .collapse{
+    color: var(--el-color-primary);
+  }
 }
 
 
@@ -97,9 +90,6 @@ onBeforeMount(()=>{
     .header{
       display: flex;
 
-      .slogn{
-        line-height: 4rem;
-      }
 
       .el-scrollbar{
         padding: 0.5rem 0.3rem;
@@ -126,6 +116,7 @@ onBeforeMount(()=>{
     height: 100%;
     justify-content: space-between;
     width: auto;
+    border-right: 1px solid #ddd;
 
     .header{
       margin-right: autos;

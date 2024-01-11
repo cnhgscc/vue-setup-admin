@@ -27,7 +27,7 @@
       </el-scrollbar>
     </div>
     <div class="footer">
-      -
+      <el-icon><Fold /></el-icon>
     </div>
   </component>
   <el-main>
@@ -37,7 +37,7 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, reactive } from 'vue';
-
+import { Fold } from '@element-plus/icons-vue'
 
 const vm = reactive({
   width: 0,

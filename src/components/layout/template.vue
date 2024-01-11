@@ -125,7 +125,10 @@ onMounted(()=>{
   }
 }
 
-
+.slogn{
+  background-color: var(--el-color-primary);
+  color:  var(--el-color-primary-light-9) !important;
+}
 
 
 @media (max-width: 768px) {

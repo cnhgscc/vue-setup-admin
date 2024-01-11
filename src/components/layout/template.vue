@@ -61,7 +61,6 @@ onBeforeMount(()=>{
   .navbar{
     .slogn{
       font-size: 1.2rem;
-      // width: 11rem;
       color: var(--el-color-primary);
       font-weight: 600;
       font-style:italic;

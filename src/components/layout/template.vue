@@ -21,13 +21,7 @@
     </div>
     <div class="footer">
 
-      <div class="description" v-if="!vm.collapse">
-        <div class="left">
-          <div class="loginuser">{{ vmsept.loginuser }}</div>
-          <div class="timezone">{{ vmsept.timezone }}</div>
-        </div>
-        <div class="right"><el-icon><User /></el-icon></div>
-      </div>
+      <DescriptionView :display="!vm.collapse"></DescriptionView>
 
       <div class="collapse">
         <el-icon @click="vm.collapse=false" v-if="vm.collapse"><Expand /></el-icon>
@@ -51,6 +45,8 @@ import { onBeforeMount, onMounted, reactive } from 'vue';
 import { useDark, useToggle } from '@vueuse/core'
 import { Fold, Expand, ChatRound, Setting, User, ElementPlus, MoonNight, Sunny } from '@element-plus/icons-vue'
 import {useVmseptStore} from '@/stores/vmsept'
+
+import DescriptionView from "../minix/description.vue"
 
 
 const vmsept = useVmseptStore()
@@ -98,29 +94,6 @@ onMounted(()=>{
       width: 100%;
       text-align: center;
       
-      .description{
-        display: flex;
-        justify-items: center;
-        padding: 0.6rem 1rem;
-        border-top: 1px solid var(--gb-border-primary);
-        border-bottom: 1px solid var(--gb-border-primary);
-
-        .loginuser{
-          font-size: 0.9rem;
-          text-align: left;
-        }
-        .timezone{
-          font-size: 0.5rem;
-          text-align: left;
-        }
-
-        .right{
-          padding-top: 0.3rem;
-          margin-left: auto;
-          line-height: 1.4rem;
-          justify-items: center;
-        }
-      }
 
       .collapse{
         display: flex;

@@ -99,10 +99,7 @@ onBeforeMount(()=>{
 
     .header{
       display: flex;
-
-
       .el-scrollbar{
-        padding: 0.5rem 0.3rem;
         width: auto;
         height: auto;
       }

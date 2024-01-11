@@ -1,7 +1,6 @@
 <template>
 <main>
   <LayoutView>
-
     <template #menu>
       <el-menu-item index="/">
         <el-icon><setting /></el-icon>
@@ -23,7 +22,7 @@ import LayoutView from '@/components/layout/template.vue'
 import { Setting} from '@element-plus/icons-vue'
 
 
-const vmps = reactive({
+const vm = reactive({
 })
 
 </script>

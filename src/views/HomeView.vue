@@ -1,11 +1,14 @@
 <template>
 <main>
-  <el-tag>123132</el-tag>
+  <Layout>
+    
+  </Layout>
 </main>
 </template>
 
 <script setup lang="ts">
 import {reactive} from 'vue'
+import Layout from '@/components/layout/template.vue'
 
 
 const vmps = reactive({

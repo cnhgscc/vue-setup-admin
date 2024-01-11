@@ -90,7 +90,7 @@ onBeforeMount(()=>{
       .description{
         display: flex;
         justify-items: center;
-        padding: 0.3rem 1rem;
+        padding: 0.6rem 1rem;
         border-top: 1px solid var(--gb-border-primary);
         border-bottom: 1px solid var(--gb-border-primary);
 
@@ -112,6 +112,8 @@ onBeforeMount(()=>{
       }
 
       .collapse{
+        height: 3rem;
+        line-height: 3rem;
         color: var(--el-color-primary);
       }
     }

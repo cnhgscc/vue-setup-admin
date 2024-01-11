@@ -20,9 +20,7 @@
       </el-scrollbar>
     </div>
     <div class="footer">
-
       <DescriptionView :display="!vm.collapse"></DescriptionView>
-
       <div class="collapse">
         <el-icon @click="vm.collapse=false" v-if="vm.collapse"><Expand /></el-icon>
         <el-icon @click="vm.collapse=true" v-else><Fold /></el-icon>

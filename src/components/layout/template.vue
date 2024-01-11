@@ -26,7 +26,7 @@
           <div class="loginuser">{{ vmsept.loginuser }}</div>
           <div class="timezone">{{ vmsept.timezone }}</div>
         </div>
-        <div class="right"><el-icon><User /></el-icon></div>
+        <div class="right" @click="toggleDark()"><el-icon><User /></el-icon></div>
       </div>
 
       <div class="collapse">
@@ -42,10 +42,15 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, onMounted, reactive } from 'vue';
+import { useDark, useToggle } from '@vueuse/core'
 import { Fold, Expand, ChatRound, Setting, User } from '@element-plus/icons-vue'
 import {useVmseptStore} from '@/stores/vmsept'
 
+
 const vmsept = useVmseptStore()
+
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
 
 const vm = reactive({

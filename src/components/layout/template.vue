@@ -10,15 +10,11 @@
           router
         >
           <!-- slogn -->
-          <el-menu-item index="/" class="slogn">
+          <el-menu-item class="slogn">
             <el-icon><ChatRound /></el-icon>
             <template #title>{{ vmsept.slogn }}</template>
           </el-menu-item>
-          
-          <el-menu-item index="1">
-            <el-icon><setting /></el-icon>
-            <template #title>Navigator Four</template>
-          </el-menu-item>
+          <slot name="menu"></slot>
         </el-menu>
       </el-scrollbar>
     </div>

@@ -1,6 +1,14 @@
 <template>
 <main>
   <LayoutView>
+
+    <template #menu>
+      <el-menu-item index="/">
+        <el-icon><setting /></el-icon>
+        <template #title>首頁</template>
+      </el-menu-item>
+    </template>
+
     <template #main>
       main
     </template>
@@ -9,8 +17,10 @@
 </template>
 
 <script setup lang="ts">
-import {reactive} from 'vue'
+import { reactive } from 'vue'
 import LayoutView from '@/components/layout/template.vue'
+
+import { Setting} from '@element-plus/icons-vue'
 
 
 const vmps = reactive({

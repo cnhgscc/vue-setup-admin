@@ -8,6 +8,7 @@
           :collapse="vm.collapse"
           collapse-transition
           router
+          :default-active="vm.pathname"
         >
           <!-- slogn -->
           <el-menu-item class="slogn">
@@ -40,7 +41,7 @@
 </el-container>
 </template>
 <script setup lang="ts">
-import { onBeforeMount, reactive } from 'vue';
+import { onBeforeMount, onMounted, reactive } from 'vue';
 import { Fold, Expand, ChatRound, Setting, User } from '@element-plus/icons-vue'
 import {useVmseptStore} from '@/stores/vmsept'
 
@@ -51,14 +52,17 @@ const vm = reactive({
   width: 0,
   navbar: 'el-aside',
   collapse: false,
+  pathname: window.location.pathname
 })
-
 
 onBeforeMount(()=>{
   vm.width = window.innerWidth
   vm.navbar =  vm.width <= 768 ? 'el-header': 'el-aside'
 })
 
+onMounted(()=>{
+  vm.pathname = window.location.pathname
+})
 
 </script>
 

@@ -12,7 +12,7 @@
         >
           <!-- slogn -->
           <el-menu-item class="slogn">
-            <el-icon><ChatRound /></el-icon>
+            <el-icon><ElementPlus /></el-icon>
             <template #title>{{ vmsept.slogn }}</template>
           </el-menu-item>
           <slot name="menu"></slot>
@@ -26,12 +26,18 @@
           <div class="loginuser">{{ vmsept.loginuser }}</div>
           <div class="timezone">{{ vmsept.timezone }}</div>
         </div>
-        <div class="right" @click="toggleDark()"><el-icon><User /></el-icon></div>
+        <div class="right"><el-icon><User /></el-icon></div>
       </div>
 
       <div class="collapse">
         <el-icon @click="vm.collapse=false" v-if="vm.collapse"><Expand /></el-icon>
         <el-icon @click="vm.collapse=true" v-else><Fold /></el-icon>
+
+        <template v-if="!vm.collapse">
+          <el-icon v-if="isDark" @click="toggleDark()"><Sunny /></el-icon>
+          <el-icon v-else @click="toggleDark()"><MoonNight /></el-icon>
+        </template>
+
       </div>
     </div>
   </component>
@@ -43,7 +49,7 @@
 <script setup lang="ts">
 import { onBeforeMount, onMounted, reactive } from 'vue';
 import { useDark, useToggle } from '@vueuse/core'
-import { Fold, Expand, ChatRound, Setting, User } from '@element-plus/icons-vue'
+import { Fold, Expand, ChatRound, Setting, User, ElementPlus, MoonNight, Sunny } from '@element-plus/icons-vue'
 import {useVmseptStore} from '@/stores/vmsept'
 
 
@@ -117,8 +123,11 @@ onMounted(()=>{
       }
 
       .collapse{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
         height: 3rem;
-        line-height: 3rem;
         color: var(--el-color-primary);
       }
     }

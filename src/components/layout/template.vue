@@ -4,7 +4,6 @@
     <div class="header">
       <div class="slogn">vue-setup-admin</div>
       <el-scrollbar>
-        <!-- horizontal: 水平 -->
         <el-menu
           :mode="vm.width <= 768 ? 'horizontal':'vertical'"
         >

@@ -2,11 +2,14 @@
 <el-container>
   <component :is="vm.navbar" class="navbar">
     <div class="header">
-      <div class="slogn">vue-setup-admin</div>
       <el-scrollbar>
         <el-menu
           :mode="vm.width <= 768 ? 'horizontal':'vertical'"
+          :collapse="vm.collapse"
         >
+          <!-- slogn -->
+          <el-menu-item index="/" class="slogn">vue-setup-admin</el-menu-item>
+          
           <el-menu-item index="1">Processing Center</el-menu-item>
           <el-sub-menu index="2">
             <template #title>Workspace</template>
@@ -26,7 +29,10 @@
       </el-scrollbar>
     </div>
     <div class="footer">
-      <el-icon><Fold /></el-icon>
+      <div>
+        <el-icon @click="vm.collapse=false" v-if="vm.collapse"><Expand /></el-icon>
+        <el-icon @click="vm.collapse=true" v-else><Fold /></el-icon>
+      </div>
     </div>
   </component>
   <el-main>
@@ -36,11 +42,12 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, reactive } from 'vue';
-import { Fold } from '@element-plus/icons-vue'
+import { Fold, Expand } from '@element-plus/icons-vue'
 
 const vm = reactive({
   width: 0,
   navbar: 'el-aside',
+  collapse: false,
 })
 
 

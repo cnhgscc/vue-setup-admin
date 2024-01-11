@@ -3,8 +3,8 @@
   <LayoutView>
     <template #menu>
       <el-menu-item index="/">
-        <el-icon><setting /></el-icon>
-        <template #title>首頁</template>
+        <el-icon><Grid /></el-icon>
+        <template #title>首页</template>
       </el-menu-item>
     </template>
 
@@ -17,9 +17,9 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import LayoutView from '@/components/layout/template.vue'
 
-import { Setting} from '@element-plus/icons-vue'
+import LayoutView from '@/components/layout/template.vue'
+import { Grid } from '@element-plus/icons-vue'
 
 
 const vm = reactive({

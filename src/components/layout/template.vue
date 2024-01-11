@@ -12,7 +12,7 @@
           <!-- slogn -->
           <el-menu-item index="/" class="slogn">
             <el-icon><ChatRound /></el-icon>
-            <template #title>vue-setup-admin</template>
+            <template #title>{{ vmsept.slogn }}</template>
           </el-menu-item>
           
           <el-menu-item index="1">
@@ -37,6 +37,10 @@
 <script setup lang="ts">
 import { onBeforeMount, reactive } from 'vue';
 import { Fold, Expand, ChatRound, Setting } from '@element-plus/icons-vue'
+import {useVmseptStore} from '@/stores/vmsept'
+
+const vmsept = useVmseptStore()
+
 
 const vm = reactive({
   width: 0,

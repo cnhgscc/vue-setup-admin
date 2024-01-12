@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import {useVmseptStore} from '../../stores/vmsept'
 import {  User } from '@element-plus/icons-vue'
 

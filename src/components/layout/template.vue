@@ -48,7 +48,6 @@ import DescriptionView from "../minix/description.vue"
 
 
 const vmsept = useVmseptStore()
-
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 

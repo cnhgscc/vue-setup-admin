@@ -9,7 +9,9 @@
     </template>
 
     <template #main>
-      main
+      <LayoutTable>
+
+  </LayoutTable>
     </template>
   </LayoutView>
 </main>
@@ -19,6 +21,7 @@
 import { reactive } from 'vue'
 
 import LayoutView from '@/components/layout/template.vue'
+import LayoutTable from '@/components/minix/table.vue'
 import { Grid } from '@element-plus/icons-vue'
 
 
